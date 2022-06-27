@@ -44,5 +44,8 @@ int main()
 	pathfinder.discoverMap_BFS(map, discovered);
 	std::cout << pathfinder.getSumPathLength(targets, discovered);
 
+	delete[]map;
+	delete[]discovered;
+
 	return 0;
 }
