@@ -88,7 +88,8 @@ int Pathfinder::getSumPathLength(std::deque<vec2i>& targets, int* discovered) {
 		int sum = 0;
 
 		for (const auto& t : targets)
-			sum += discovered[t.y * mapWidth + t.x] - 1;
+			if(discovered[t.y * mapWidth + t.x] != -1)
+				sum += discovered[t.y * mapWidth + t.x] - 1;
 
 		return sum;
 	}
